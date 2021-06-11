@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task runTests(type: Test){
+    useTestNG(){
+        testLogging.exceptionFormat = 'full'
+        testLogging.showStandardStreams = true
+        useDefaultListeners = true
+    }
+}
+
+dependencies {
+    implementation "org.testng:testng:6.14.2"
+}
